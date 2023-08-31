@@ -3,21 +3,20 @@ terraform {
 
   required_providers {
     datadog = {
-      source  = "DataDog/datadog"
+      source  = "datadog/datadog"
       version = "3.29.0"
     }
   }
 }
 
-variable "api_key" {
-  description = "API Key for Datadog" 
+module "sandbox" {
+  source  = "./sandbox"
+  sandbox_api_key  = var.sandbox_api_key
+  sandbox_app_key  = var.sandbox_app_key
 }
 
-variable "app_key" {
-  description = "Application Key for Datadog" 
-}
-
-provider "datadog" {
-  api_key = var.api_key
-  app_key = var.app_key
+module "demo" {
+  source  = "./demo"
+  demo_api_key = var.demo_api_key
+  demo_app_key = var.demo_app_key
 }
