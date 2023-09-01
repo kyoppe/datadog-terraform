@@ -3,7 +3,7 @@ resource "datadog_dashboard" "tfer--dashboard_4gn-3c2-zkz" {
   is_read_only = "false"
   layout_type  = "ordered"
   reflow_type  = "fixed"
-  title        = "Minecraft Server Dashboard[Terraform Managed]"
+  title        = "Minecraft Server Dashboard [Terraform Managed]"
   url          = "/dashboard/4gn-3c2-zkz/minecraft-server-dashboard"
 
   widget {
